@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+	<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <title>Rock Paper Scissors</title>
+
+</head>
+<body>
+
+    <h1>Rock Paper Scissors - Multiplayer</h1>
+	<div class="container">
+		<div class="row">
+             <!-- player name entry -->
+			<div class="col-lg-12">
+				<br>
+				<br>
+				<div id="player-entry"></div>
+
+				<div id="instruction"></div>
+			</div>
+		</div>
+
+    <div class="container">
+        <br>
+        <div class="row justify-content-md-center">
+            <!-- player 1 box -->
+            <div class="col-lg-4" id="player-1">
+
+                <h3 id="player1name"></h3>
+
+                <div id="player1waiting"></div>
+
+                <div id="player1choices">
+
+
+                </div>
+                <br>
+                <div id="player1selection"></div>
+
+                <p id="player1score">
+                    <span id="player2wins"></span>
+                    <span id="player2losses"></span>
+                </p>
+
+            </div>
+            <!-- box score -->
+            <div class="col-lg-3" id="score">
+                <p id="winner"></p>
+            </div>
+            <!-- player 2 box -->
+            <div class="col-lg-4" id="player-2">
+
+                <p id="player2name"></p>
+
+                <div id="player2waiting"></div>
+
+                <div id="player2choices">
+
+
+                </div>
+                <br>
+                <div id="player2selection"></div>
+
+                <p id="player2score">
+                    <span id="player2wins"></span>
+                    <span id="player2losses"></span>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+<script type="text/javascript" src="assets/js/javascript.js"></script>
+</body>
+</html>
