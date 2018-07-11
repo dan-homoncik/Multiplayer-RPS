@@ -74,7 +74,7 @@ button{
 #chat-window{
 	border: 5px solid black;
 	height: 200px;
-	overflow: hidden;
+	overflow: scroll;
 	scroll-behavior: auto;
 	text-align: left;
 	padding-left: 20px;

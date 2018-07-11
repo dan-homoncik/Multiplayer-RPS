@@ -402,7 +402,7 @@ $(document).ready(function () {
 
 
 	database.ref("/chat").orderByChild("dateAdded").limitToLast(1).on("value", function (snapshot) {
-		$("#chat-window").append("</br>" + snapshot.val().message + "</br>");
+		$("#chat-window").prepend("</br>" + snapshot.val().message + "</br>");
 	});
 
 });
