@@ -52,11 +52,12 @@ $(document).ready(function () {
     
     
         Winner1: function () {
-            $("#winner").html(player_1_Name + " wins!");
+            $("#winner").html(player_1_Name + " wins!" + "</br><img class='pointer' src='assets/images/point-left.jpg' />");
+
         },
     
         Winner2: function () {
-            $("#winner").html(player_2_Name + " wins!");
+            $("#winner").html(player_2_Name + " wins!" + "</br><img class='pointer' src='assets/images/point-right.jpg' />");
         },
     
     
@@ -159,7 +160,7 @@ $(document).ready(function () {
 				} else if ((snapshot.child("players").child(2).exists()) && (PlayerName == snapshot.child("players").child(2).val().name)) {
 
 					database.ref("/chat").onDisconnect().update({
-						message: ((snapshot.child("players").child(2).val().name) + " has quit!"),
+						message: ((snapshot.child("players").child(2).val().name) + " has quit"),
 						dateAdded: firebase.database.ServerValue.TIMESTAMP
 					});
 					database.ref("players/2").onDisconnect().remove();
@@ -176,7 +177,6 @@ $(document).ready(function () {
 			$("#player1wins").empty();
 			$("#player2losses").empty();
 			$("#player1name").empty();
-			$("#instruction").empty();
 			$("#player-1").attr("style", "border: 5px solid white");
 			$("#player-2").attr("style", "border: 5px solid white");
 
@@ -188,7 +188,6 @@ $(document).ready(function () {
 			$("#win2").empty();
 			$("#lose2").empty();
 			$("#player2name").empty();
-			$("#instruction").empty();
 			$("#player-1").attr("style", "border: 5px solid white");
 			$("#player-2").attr("style", "border: 5px solid white");
 		};
@@ -235,8 +234,8 @@ $(document).ready(function () {
 
 
 			if ((PlayerName == snapshot.child("players").child(1).val().name) && (databaseTurn == 1)) {
-				$("#player-entry").html("<h2>" + snapshot.child("players").child(1).val().name + ", you are player 1</h2>");
-				$("#player-1").attr("style", "border: 5px solid yellow");
+				$("#player-entry").html("<h2>It's your turn!</h2>");
+				$("#player-1").attr("style", "border: 5px solid green");
 				$("#player-2").attr("style", "border: 5px solid white");
 				hideGame();
 				$("#player1choices").attr("style", "visibility:visible");
@@ -244,32 +243,30 @@ $(document).ready(function () {
 				$("#paper1").html("PAPER");
 				$("#scissors1").html("SCISSORS");
 				$("#winner").empty();
-				$("#instruction").html("It's your turn!");
 			}
 
 			if ((PlayerName == snapshot.child("players").child(1).val().name) && (databaseTurn == 2)) { 
 				$("#player-1").attr("style", "border: 5px solid white");
-				$("#player-2").attr("style", "border: 5px solid yellow");
+				$("#player-2").attr("style", "border: 5px solid green");
 				hideGame();
 				$("#player1selection").attr("style", "visibility:visible");
 				$("#player1selection").html("Pick: " + "<h2>" + player_1_Choice + "</h2>");
-				$("#instruction").html("It's " + player_2_Name + "'s turn");
+				$("#player-entry").html("<h2>It's " + player_2_Name + "'s turn</h2>");
 			}
 
 
 			if ((PlayerName == snapshot.child("players").child(2).val().name) && (databaseTurn == 1)) {
-				$("#player-entry").html("<h2>" + snapshot.child("players").child(2).val().name + ", you are player 2</h2>");
-				$("#player-1").attr("style", "border: 5px solid yellow");
+				$("#player-entry").html("<h2>It's " + player_1_Name + "'s turn</h2>");
+				$("#player-1").attr("style", "border: 5px solid green");
 				$("#player-2").attr("style", "border: 5px solid white");
-				$("#instruction").html("It's " + player_1_Name + "'s turn");
 				hideGame();
 				$("#winner").empty();
 			}
 
 			if ((PlayerName == snapshot.child("players").child(2).val().name) && (databaseTurn == 2)) {
 				$("#player-1").attr("style", "border: 5px solid white");
-				$("#player-2").attr("style", "border: 2px solid yellow");
-				$("#instruction").html("It's your turn!");
+				$("#player-2").attr("style", "border: 5px solid green");
+				$("#player-entry").html("<h2>It's your turn!</h2>");
 				hideGame();
 				$("#player2choices").attr("style", "visibility:visible");
 				$("#rock2").html("ROCK");
@@ -293,9 +290,9 @@ $(document).ready(function () {
 				$("#player2choices").attr("style", "visibility:hidden");
 				$("#player1selection").attr("style", "visibility:visible");
 				$("#player2selection").attr("style", "visibility:visible");
-				$("#player1selection").html("Chose: " + "<h2>" + player_1_Choice + "</h2>");
-				$("#player2selection").html("Chose: " + "<h2>" + player_2_Choice + "</h2>");
-				$("#instruction").empty();
+				$("#player1selection").html("Pick: " + "<h2>" + player_1_Choice + "</h2>");
+				$("#player2selection").html("Pick: " + "<h2>" + player_2_Choice + "</h2>");
+
 
 				CheckWinners.scoreCheck();
 

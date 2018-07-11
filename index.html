@@ -8,27 +8,25 @@
     crossorigin="anonymous">
 	<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <title>Rock Paper Scissors</title>
 
 </head>
 <body>
 
-    <h1>Rock Paper Scissors - Multiplayer</h1>
+    <h1>Rock Paper Scissors - Head 2 Head</h1>
 	<div class="container">
 		<div class="row">
              <!-- player name entry -->
 			<div class="col-lg-12">
-				<br>
-				<br>
+
 				<div id="player-entry"></div>
 
-				<div id="instruction"></div>
 			</div>
 		</div>
 
     <div class="container">
-        <br>
+
         <div class="row justify-content-md-center">
             <!-- player 1 box -->
             <div class="col-lg-4" id="player-1">
@@ -38,10 +36,14 @@
                 <div id="player1waiting"></div>
 
                 <div id="player1choices">
+                        <input type="image" class="choice1" id="rock1" value="rock" src="assets/images/rock.png"></input>
 
+                        <input type="image" class="choice1" id="paper1" value="paper" src="assets/images/paper.png"></input>
+
+						<input type="image" class="choice1" id="scissors1" value="scissors" src="assets/images/scissors.png"></input>
 
                 </div>
-                <br>
+
                 <div id="player1selection"></div>
 
                 <p id="player1score">
@@ -62,10 +64,14 @@
                 <div id="player2waiting"></div>
 
                 <div id="player2choices">
+                        <input type="image" class="choice2" id="rock2" value="rock" src="assets/images/rock.png"></input>
 
+                        <input type="image" class="choice2" id="paper2" value="paper" src="assets/images/paper.png"></input>
+
+						<input type="image" class="choice2" id="scissors2" value="scissors" src="assets/images/scissors.png"></input>
 
                 </div>
-                <br>
+
                 <div id="player2selection"></div>
 
                 <p id="player2score">
@@ -79,8 +85,7 @@
 
     <div class="container">
             <br>
-            <br>
-            <br>
+
             <div class="row">
     
                 <div class="col-lg-2"></div>
@@ -95,10 +100,10 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <form>
-                                <input type="text" id="chat-input">
+                                <input type="text" id="message-input">
                                 <br>
                                 <br>
-                                <button class="btn btn-default" input type="submit" id="submit-chat" value="SEND">Send</button>
+                                <button class="btn btn-default" input type="submit" id="submit-message" value="SEND">Send</button>
                             </form>
                         </div>
                     </div>
